@@ -3,7 +3,7 @@
 # Note: we cannot assume we're running bash and use the set -euo pipefail approach.
 set -e
 
-VERSION="0.225.0"
+VERSION="0.256.0"
 FILE="databricks_cli_$VERSION"
 
 # Include operating system in file name.
@@ -80,7 +80,7 @@ tmpdir="$(mktemp -d)"
 cd "$tmpdir"
 
 # Download release archive.
-curl -L -s -O "https://github.com/databricks/cli/releases/download/v${VERSION}/${FILE}.zip"
+curl -fsSL -O "https://github.com/databricks/cli/releases/download/v${VERSION}/${FILE}.zip"
 
 # Unzip release archive.
 unzip -q "${FILE}.zip"
